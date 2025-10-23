@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import db from './database/db.js'
 import userRouter from './routes/userRoute.js'
+import payRouter from './routes/payRoute.js'
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/", userRouter);
+app.use("/", payRouter)
 
 app.listen(PORT, async (req, res) => {
     try {
